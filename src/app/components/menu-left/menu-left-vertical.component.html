@@ -1,7 +1,9 @@
 <nav class="cat__menu-left">
     <div class="cat__menu-left__lock cat__menu-left__action--menu-toggle">
         <div class="cat__menu-left__pin-button">
-            <div><!-- --></div>
+            <div>
+                <!-- -->
+            </div>
         </div>
     </div>
     <div class="cat__menu-left__logo">
@@ -9,11 +11,9 @@
             <img src="assets/modules/dummy-assets/common/img/logo-inverse.png" />
         </a>
     </div>
-
     <div class="cat__menu-left__inner">
         <ul class="cat__menu-left__list cat__menu-left__list--root">
-
-                <!--<li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+            <!--<li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-book"></span>
                             Catalogos
@@ -104,11 +104,8 @@
                                 </li>
                         </ul>
                 </li>-->
-
-                <!-- end section -->
-
-
-             <!-- end section    <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+            <!-- end section -->
+            <!-- end section    <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-tab"></span>
                             Movimientos
@@ -144,7 +141,7 @@
                 </li>
 
                 -->
-                <!--
+            <!--
                 <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon"><i class="fa fa-google-wallet" ></i></span>
@@ -176,7 +173,7 @@
                 </li>
 
 -->
-<!--
+            <!--
                 <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-stats-dots"></span>
@@ -203,7 +200,7 @@
                 </li>
 
 -->
-<!--
+            <!--
                 <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-glass"></span>
@@ -234,7 +231,7 @@
                         </ul>
                 </li>
 -->
-<!--
+            <!--
                 <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-lock"></span>
@@ -255,27 +252,25 @@
                 </li>
 
 -->
-
-                <li class="cat__menu-left__item cat__menu-left__submenu">
-                        <a href="javascript: void(0);">
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-wrench"></span>
                             Corrector de Facturas
                         </a>
-                        <ul class="cat__menu-left__list">
-
-                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
-                                    <a href="javascript: void(0);" [routerLink]="['supplier-invoices/fix-supplier-invoices']" >
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);" [routerLink]="['supplier-invoices/fix-supplier-invoices']">
                                         <span class="cat__menu-left__icon icmn-key2"></span>
                                         Liquidar Facturas
                                     </a>
-                                </li>
-                                <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
-                                        <a href="javascript: void(0);" [routerLink]="['supplier-invoices/supplier-invoices-list']" >
+                    </li>
+                    <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);" [routerLink]="['supplier-invoices/supplier-invoices-list']">
                                             <span class="cat__menu-left__icon icmn-key2"></span>
                                             Administrador de Facturas
                                         </a>
-                                    </li>
-                           <!-- <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                    </li>
+                    <!-- <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
                                 <a [routerLink]="['pages/login-alpha']">
                                     <span class="cat__menu-left__icon"></span>
                                     CxP
@@ -323,9 +318,15 @@
                                             </li>
                                         </ul>
                                 </li>-->
-                        </ul>
-                </li>
-                <!-- end section -->
+                </ul>
+            </li>
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a [routerLink]="['expense-unit/expense-unit-list']">
+                    <span class="cat__menu-left__icon icmn-wrench"></span>
+                    Unidad de gasto
+                </a>
+            </li>
+            <!-- end section -->
         </ul>
     </div>
 </nav>

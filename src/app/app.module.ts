@@ -14,10 +14,9 @@ import { MenuLeftComponent } from './components/menu-left/menu-left.component';
 import { MenuRightComponent } from './components/menu-right/menu-right.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { FixSupplierInvoicesComponent } from './supplier-invoices/fix-supplier-invoices/fix-supplier-invoices.component';
-import { SupplierInvoicesComponent } from './supplier-invoices/supplier-invoices.component';
-import { StorageService } from 'app/shared/storage.service';
+import { SharedModule } from 'app/shared/shared.module';
 import { SupplierInvoicesModule } from 'app/supplier-invoices/supplier-invoices.module';
+import { ExpenseUnitModule } from 'app/expense-unit/expense-unit.module';
 
 declare var NProgress: any;
 
@@ -35,12 +34,15 @@ declare var NProgress: any;
         FormsModule,
         HttpClientModule,
         RouterModule,
-        
+
+        SharedModule,
         SupplierInvoicesModule,
+        ExpenseUnitModule,
+        
         NgbModule.forRoot(),
         routing
     ],
-    providers: [StorageService],
+    providers: [],
     bootstrap: [ AppComponent ]
 })
 
