@@ -1,0 +1,331 @@
+<nav class="cat__menu-left">
+    <div class="cat__menu-left__lock cat__menu-left__action--menu-toggle">
+        <div class="cat__menu-left__pin-button">
+            <div><!-- --></div>
+        </div>
+    </div>
+    <div class="cat__menu-left__logo">
+        <a [routerLink]="['/']">
+            <img src="assets/modules/dummy-assets/common/img/logo-inverse.png" />
+        </a>
+    </div>
+
+    <div class="cat__menu-left__inner">
+        <ul class="cat__menu-left__list cat__menu-left__list--root">
+
+                <!--<li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-book"></span>
+                            Catalogos
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Negocios
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Periodos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Cuentas Hijo
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Cuentas Padre
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Bancos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Tipo de Ingreso
+                                </a>
+                            </li>
+
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Tipo de Gastos
+                                </a>
+                            </li>
+
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Usuarios
+                                </a>
+                            </li>
+
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Proveedores
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item cat__menu-left__submenu">
+                                    <a href="javascript: void(0);">
+                                        <span class="cat__menu-left__icon"></span>
+                                        Insumos
+                                    </a>
+                                    <ul class="cat__menu-left__list">
+                                            
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);">
+                                                    Administrador Insumos
+                                                </a>
+                                            </li>
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);">
+                                                    Presentaciones
+                                                </a>
+                                            </li>
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);">
+                                                    Familias
+                                                </a>
+                                            </li>
+
+                                           
+                                        </ul>
+                                </li>
+                        </ul>
+                </li>-->
+
+                <!-- end section -->
+
+
+             <!-- end section    <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-tab"></span>
+                            Movimientos
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Gastos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Ingresos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Presupuestos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Clientes
+                                </a>
+                            </li>
+                            
+                           
+                        </ul>
+                </li>
+
+                -->
+                <!--
+                <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon"><i class="fa fa-google-wallet" ></i></span>
+                            Fastball
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Reporte-Gastos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Reporte-Ingresos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Estado de Resultados
+                                </a>
+                            </li>
+                            
+                            
+                           
+                        </ul>
+                </li>
+
+-->
+<!--
+                <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-stats-dots"></span>
+                            Conciliaciones
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Captura
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Auditoria
+                                </a>
+                            </li>
+                            
+                            
+                            
+                           
+                        </ul>
+                </li>
+
+-->
+<!--
+                <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-glass"></span>
+                            Pedidos
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Vinos-Desgaste
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Vinos-Saldos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Vinos-Pedidos
+                                </a>
+                            </li>
+                            
+                            
+                           
+                        </ul>
+                </li>
+-->
+<!--
+                <li class="cat__menu-left__item cat__menu-left__submenu" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-lock"></span>
+                            Seguridad
+                        </a>
+                        <ul class="cat__menu-left__list">
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Cierre Mensual
+                                </a>
+                            </li>
+                            
+                            
+                            
+                           
+                        </ul>
+                </li>
+
+-->
+
+                <li class="cat__menu-left__item cat__menu-left__submenu">
+                        <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-wrench"></span>
+                            Corrector de Facturas
+                        </a>
+                        <ul class="cat__menu-left__list">
+
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                    <a href="javascript: void(0);" [routerLink]="['supplier-invoices/fix-supplier-invoices']" >
+                                        <span class="cat__menu-left__icon icmn-key2"></span>
+                                        Liquidar Facturas
+                                    </a>
+                                </li>
+                                <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                        <a href="javascript: void(0);" [routerLink]="['supplier-invoices/supplier-invoices-list']" >
+                                            <span class="cat__menu-left__icon icmn-key2"></span>
+                                            Administrador de Facturas
+                                        </a>
+                                    </li>
+                           <!-- <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-alpha']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    CxP
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                                <a [routerLink]="['pages/login-beta']">
+                                    <span class="cat__menu-left__icon"></span>
+                                    Pagos
+                                </a>
+                            </li>
+                            <li class="cat__menu-left__item cat__menu-left__submenu">
+                                    <a href="javascript: void(0);">
+                                        <span class="cat__menu-left__icon"></span>
+                                        FIX Punto de Venta
+                                    </a>
+
+                                    <ul class="cat__menu-left__list">
+                                            
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);">
+                                                    Factura Proveedor
+                                                </a>
+                                            </li>
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);">
+                                                    Hoja Verde
+                                                </a>
+                                            </li>
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);">
+                                                    Reporte Caja
+                                                </a>
+                                            </li>
+
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);" [routerLink]="['supplier-invoices/fix-supplier-invoices']" >
+                                                    Fix
+                                                </a>
+                                            </li>
+                                            <li class="cat__menu-left__item">
+                                                <a href="javascript: void(0);" [routerLink]="['supplier-invoices/supplier-invoices-list']" >
+                                                    Administrador de Facturas
+                                                </a>
+                                            </li>
+                                        </ul>
+                                </li>-->
+                        </ul>
+                </li>
+                <!-- end section -->
+        </ul>
+    </div>
+</nav>

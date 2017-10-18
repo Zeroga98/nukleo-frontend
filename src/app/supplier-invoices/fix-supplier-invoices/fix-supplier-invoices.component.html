@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="jumbotron">
+            <h1>Fixer Saldo Factura Proveedor Punto de Venta</h1>
+            <p>Actualizar las Facturas con saldo "0" ademas que agregar un abono a la Factura.</p>
+            <ol>
+                <li>
+                    <a>Ingregse los ID's de las FPPV - tecla enter</a>
+                </li>
+                <li>
+                    <a>Click Liquidar Facturas</a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="card-block">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="mb-5">
+
+                <!-- Horizontal Form -->
+                <form (ngSubmit)="onFix()" #f="ngForm">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Ingrese los Id's</label>
+                        <div class="col-md-9">
+                            <!-- Select2 Dynamic Tags -->
+                            <div class="form-group">
+                                <select class="select2-tags" multiple>
+
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="form-group row">
+                            <div class="col-md-7 offset-md-5">
+
+
+                                <button type="submit" class="btn btn-rounded btn-primary mr-2 mb-2">Liquidar Facturas</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- End Horizontal Form -->
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
