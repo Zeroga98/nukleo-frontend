@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { OData } from '../../shared/services/odata/odata';
+
 @Component({
   selector: 'app-expense-unit-list',
   templateUrl: './expense-unit-list.component.html',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpenseUnitListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private odata: OData) { 
+  }
 
   ngOnInit() {
+  	this.odata.ExpenseUnit
+  	.Query() 
+    .Exec()
+    .subscribe(
+    expenseUnits => {
+        console.log(expenseUnits);
+    },
+    error => {
+    });
+
   }
 
 }
