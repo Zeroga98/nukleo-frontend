@@ -31,7 +31,7 @@ export class StorageService {
 
   searchSupplierInvoices(body){
     return this.http.post(
-      `${ Environments.SERVICES_ENDPOINT }/services/ocs/serch`,
+      `${ Environments.SERVICES_ENDPOINT }/ocs/serch`,
       body
     );    
   }
