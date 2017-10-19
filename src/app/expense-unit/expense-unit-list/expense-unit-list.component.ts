@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { OData } from '../../shared/services/odata/odata';
+import { ExpenseUnit } from '../../shared/models/expense-unit.model';
 
 @Component({
   selector: 'app-expense-unit-list',
@@ -9,6 +10,8 @@ import { OData } from '../../shared/services/odata/odata';
 })
 export class ExpenseUnitListComponent implements OnInit {
 
+  public expenseUnits: ExpenseUnit[];
+
   constructor(private odata: OData) { 
   }
 
@@ -16,13 +19,21 @@ export class ExpenseUnitListComponent implements OnInit {
   	this.odata.ExpenseUnit
   	.Query() 
     .Exec()
-    .subscribe(
-    expenseUnits => {
-        console.log(expenseUnits);
+    .subscribe((expenseUnits) => {
+      this.expenseUnits = expenseUnits;
     },
     error => {
     });
+  }
 
+  update(data: ExpenseUnit){
+    this.odata.ExpenseUnit
+    .Put(data, data.Id)
+    .subscribe((expenseUnits) => {
+      console.log(this.expenseUnits);
+    },
+    error => {
+    });
   }
 
 }
