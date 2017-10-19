@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
+import { Environments } from '../../constansts/environments.constanst';
 
 @Injectable()
 export class StorageService {
 
-  constructor(private http: HttpClient,) { }
+  constructor(private http: HttpClient) { }
 
   liquidateSupplierInvoices(body){
     return this.http.post(
-      'http://grupo-sixties-erp.azurewebsites.net/services/ocs/liquidate',
+      `${ Environments.SERVICES_ENDPOINT }/ocs/liquidate`,
       body
     );
   }
@@ -17,28 +17,28 @@ export class StorageService {
 
   getSuppliers(body){
     return this.http.get(
-      'http://grupo-sixties-erp.azurewebsites.net/services/commons/get/suppliers',
+      `${ Environments.SERVICES_ENDPOINT }/commons/get/suppliers`,
       body
     );    
   }
 
   getBusiness(body){
     return this.http.get(
-      'http://grupo-sixties-erp.azurewebsites.net/services/commons/get/business',
+      `${ Environments.SERVICES_ENDPOINT }/commons/get/business`,
       body
     );    
   }
 
   searchSupplierInvoices(body){
     return this.http.post(
-      'http://grupo-sixties-erp.azurewebsites.net/services/ocs/serch',
+      `${ Environments.SERVICES_ENDPOINT }/services/ocs/serch`,
       body
     );    
   }
 
   getSupplies(body){
     return this.http.post(
-      'http://grupo-sixties-erp.azurewebsites.net//services/insumos/serch',
+      `${ Environments.SERVICES_ENDPOINT }/insumos/serch`,
       body
     );   
   }

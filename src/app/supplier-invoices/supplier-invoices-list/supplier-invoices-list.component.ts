@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from 'app/shared/storage.service';
+import { StorageService } from 'app/shared/services/api/storage.service';
 import { NgForm } from '@angular/forms';
 
 declare var $: any;

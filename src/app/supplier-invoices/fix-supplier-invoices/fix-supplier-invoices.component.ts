@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from 'app/shared/storage.service';
+import { StorageService } from 'app/shared/services/api/storage.service';
 
 declare var swal: any;
 declare var $: any;
