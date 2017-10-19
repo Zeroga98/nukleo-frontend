@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ODataConfiguration } from "angular2-odata";
+import { ODataConfiguration } from "angular-odata-es5";
 
 import { Environments } from '../../constansts/environments.constanst';
 import { ODataExpenseUnits } from './odata-expense-unit'

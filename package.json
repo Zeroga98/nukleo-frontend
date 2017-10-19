@@ -22,8 +22,10 @@
     "@angular/platform-browser-dynamic": "latest",
     "@angular/router": "latest",
     "@ng-bootstrap/ng-bootstrap": "latest",
-    "angular2-odata": "0.0.23",
+    "angular-odata-es5": "^0.2.3",
+    "angular2-jwt": "^0.2.3",
     "core-js": "latest",
+    "jwt-decode": "^2.2.0",
     "primeng": "^4.2.2",
     "rxjs": "latest",
     "zone.js": "latest"
