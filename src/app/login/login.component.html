@@ -10,23 +10,22 @@
                           <strong>Por Favor Ingrese Credenciales</strong>
                       </h4>
                       <br />
-                      <form id="form-validation" name="form-validation" method="POST">
+                      <form id="form-validation" name="form-validation" (ngSubmit)="onSignin(f)" #f="ngForm">
                           <div class="form-group">
                               <label class="form-label">Username</label>
-                              <input id="validation-email"
+                              <input 
                                      class="form-control"
                                      placeholder="Email or Username"
-                                     name="validation[email]"
-                                     type="text"
-                                     data-validation="[EMAIL]">
+                                     type="email" id="email" name="email" ngModel >
                           </div>
                           <div class="form-group">
                               <label class="form-label">Password</label>
-                              <input id="validation-password"
+                              <input 
                                      class="form-control password"
-                                     name="validation[password]"
-                                     type="password" data-validation="[L>=6]"
-                                     data-validation-message="$ must be at least 6 characters"
+                                     type="password"
+                                     id="password"
+                                     name="password"
+                                     ngModel
                                      placeholder="Password">
                           </div>
                           
