@@ -18,7 +18,7 @@ import { TokenStorageService } from 'app/shared/services/auth/token-storage.serv
 	imports: [
 		CommonModule,
 		HttpClientModule,
-		ODataModule 
+		ODataModule,
 	],
 	providers: [
 		{ provide: ODataConfiguration, useFactory: initConfig },

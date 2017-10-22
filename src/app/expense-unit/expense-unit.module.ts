@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {DataTableModule,AutoCompleteModule,SharedModule} from 'primeng/primeng';
+import {DataTableModule,AutoCompleteModule} from 'primeng/primeng';
 
 import { ExpenseUnitRoutingModule } from 'app/expense-unit/expense-unit-routing.module';
 import { ExpenseUnitComponent } from 'app/expense-unit/expense-unit.component';

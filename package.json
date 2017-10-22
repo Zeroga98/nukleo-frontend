@@ -26,6 +26,8 @@
     "angular2-jwt": "^0.2.3",
     "core-js": "latest",
     "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.4",
+    "ng-formly": "^1.0.0-rc.14",
     "primeng": "^4.2.2",
     "rxjs": "latest",
     "zone.js": "latest"

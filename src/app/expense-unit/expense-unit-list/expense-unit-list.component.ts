@@ -34,12 +34,12 @@ export class ExpenseUnitListComponent implements OnInit {
     .Put(data, data.Id);
   }
 
-  public delete(expenseUnitId){
-    console.log(expenseUnitId);
+  public delete(expenseUnitId, index){
     this.odata.ExpenseUnit
     .Delete(expenseUnitId)
     .subscribe((expenseUnits) => {
       console.log(expenseUnits);
+      this.expenseUnits.splice(index, 1);
     },
     error => {
       console.log(error);
