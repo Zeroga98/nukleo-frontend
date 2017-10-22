@@ -43,7 +43,6 @@ declare var NProgress: any;
         RouterModule,
 
         SharedModule,
-
         
         NgbModule.forRoot(),
         routing

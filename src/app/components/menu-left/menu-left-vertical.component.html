@@ -332,6 +332,20 @@
                     Global
                 </a>
             </li>
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-wrench"></span>
+                            Configuración
+                        </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);" [routerLink]="['concepts/concepts-list']">
+                            <span class="cat__menu-left__icon icmn-key2"></span>
+                            Conceptos
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <!-- end section -->
         </ul>
     </div>
