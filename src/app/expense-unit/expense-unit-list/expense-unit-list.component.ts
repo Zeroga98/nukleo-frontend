@@ -12,12 +12,15 @@ export class ExpenseUnitListComponent implements OnInit {
 
   public expenseUnits: ExpenseUnit[];
 
-  constructor(private odata: OData) { 
-  }
+  constructor(private odata: OData) {}
 
   ngOnInit() {
-  	this.odata.ExpenseUnit
-  	.Query() 
+  	this.getAll();
+  }
+
+  public getAll(){
+    this.odata.ExpenseUnit
+    .Query() 
     .Exec()
     .subscribe((expenseUnits) => {
       this.expenseUnits = expenseUnits;
@@ -26,13 +29,20 @@ export class ExpenseUnitListComponent implements OnInit {
     });
   }
 
-  update(data: ExpenseUnit){
+  public update(data: ExpenseUnit){
     this.odata.ExpenseUnit
-    .Put(data, data.Id)
+    .Put(data, data.Id);
+  }
+
+  public delete(expenseUnitId){
+    console.log(expenseUnitId);
+    this.odata.ExpenseUnit
+    .Delete(expenseUnitId)
     .subscribe((expenseUnits) => {
-      console.log(this.expenseUnits);
+      console.log(expenseUnits);
     },
     error => {
+      console.log(error);
     });
   }
 

@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from 'app/shared/shared.module';
 import { SupplierInvoicesModule } from 'app/supplier-invoices/supplier-invoices.module';
 import { ExpenseUnitModule } from 'app/expense-unit/expense-unit.module';
+import { GlobalModule } from 'app/global/global.module';
 
 declare var NProgress: any;
 
