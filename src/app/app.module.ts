@@ -15,9 +15,13 @@ import { MenuRightComponent } from './components/menu-right/menu-right.component
 import { FooterComponent } from './components/footer/footer.component';
 
 import { SharedModule } from 'app/shared/shared.module';
+
 import { SupplierInvoicesModule } from 'app/supplier-invoices/supplier-invoices.module';
 import { ExpenseUnitModule } from 'app/expense-unit/expense-unit.module';
 import { GlobalModule } from 'app/global/global.module';
+
+import { ErrorPageComponent } from 'app/shared/error-page/error-page.component';
+import { AuthGuardLazy } from 'app/shared/services/auth/auth-guard-lazy.service';
 
 declare var NProgress: any;
 
@@ -27,7 +31,9 @@ declare var NProgress: any;
         TopBarComponent,
         MenuLeftComponent,
         MenuRightComponent,
-        FooterComponent
+        FooterComponent,
+        ErrorPageComponent
+
     ],
     imports: [
         BrowserModule,
@@ -37,13 +43,12 @@ declare var NProgress: any;
         RouterModule,
 
         SharedModule,
-        SupplierInvoicesModule,
-        ExpenseUnitModule,
+
         
         NgbModule.forRoot(),
         routing
     ],
-    providers: [],
+    providers: [AuthGuardLazy],
     bootstrap: [ AppComponent ]
 })
 
@@ -51,15 +56,15 @@ export class AppModule {
   constructor(private router: Router) {
     router.events.subscribe((event) => {
 
-      if(event instanceof NavigationStart) {
-        NProgress.start();
-      }
+      // if(event instanceof NavigationStart) {
+      //   NProgress.start();
+      // }
 
-      if(event instanceof NavigationEnd) {
-        setTimeout(function(){
-          NProgress.done();
-        }, 200);
-      }
+      // if(event instanceof NavigationEnd) {
+      //   setTimeout(function(){
+      //     NProgress.done();
+      //   }, 200);
+      // }
 
     });
   }
