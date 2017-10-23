@@ -12,8 +12,8 @@ import GlobalForms from '../../shared/forms/global.forms';
 })
 export class GlobalListComponent implements OnInit {
 
-	public globalCreate = { Name: "" };
 	public global: Global[];
+	public fieldCreate = { Name: "" };
 	public form = GlobalForms.initForm();
 	public dataFields = GlobalForms.getCreateFields();
 
@@ -50,7 +50,12 @@ export class GlobalListComponent implements OnInit {
 
 	public update(data: Global) {
 		this.odata.ExpenseUnit
-			.Put(data, data.Id);
+			.Put(data, data.Id)
+			.subscribe((global) => {
+			},
+			error => {
+				console.log(error);
+			});
 	}
 
 	public delete(globalId, index) {
