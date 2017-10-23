@@ -6,6 +6,7 @@ import { ODataExpenseUnits } from './odata-expense-unit';
 import { ODataGlobal } from './odata-global';
 import { ODataConcept } from './odata-concept'
 import { ODataEmployees } from './odata-employees';
+import { ODataCategories } from './odata-categories';
 
 @Injectable()
 export class OData{
@@ -14,17 +15,20 @@ export class OData{
     public Global;
     public Concept;
     public Employees;
+    public Categories;
 
     constructor(
     	private odataExpenseUnit: ODataExpenseUnits, 
     	private odataGlobal: ODataGlobal,
     	private odataConcept: ODataConcept,
         private odataEmployees: ODataEmployees,
+        private odataCategories: ODataCategories,
    	){
 		this.ExpenseUnit = odataExpenseUnit.service; 	
 		this.Global = odataGlobal.service; 	
 		this.Concept = odataConcept.service; 	
         this.Employees = odataEmployees.service; 
+        this.Categories = odataCategories.service; 
     }
 }
 

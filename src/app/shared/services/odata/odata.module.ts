@@ -5,6 +5,7 @@ import { ODataExpenseUnits } from './odata-expense-unit';
 import { ODataGlobal } from './odata-global';
 import { ODataConcept } from './odata-concept';
 import { ODataEmployees } from './odata-employees';
+import { ODataCategories } from './odata-categories';
 
 @NgModule({
     declarations: [],
@@ -14,7 +15,8 @@ import { ODataEmployees } from './odata-employees';
       ODataExpenseUnits,
       ODataGlobal,
       ODataConcept,
-      ODataEmployees
+      ODataEmployees,
+      ODataCategories
     ]
 })
 
