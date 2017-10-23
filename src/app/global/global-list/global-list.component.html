@@ -42,7 +42,7 @@
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <p-dataTable [value]="global" [editable]="true">
+                                                    <p-dataTable [value]="global" [editable]="true" [immutable]="false">
                                                         <p-column field="Id" header="ID"></p-column>
                                                         <p-column field="Name" header="Nombre" [editable]="true"></p-column>
                                                         <p-column field="Description" header="Descripción" [editable]="true"></p-column>

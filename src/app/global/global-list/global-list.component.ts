@@ -40,8 +40,7 @@ export class GlobalListComponent implements OnInit {
 			this.odata.Global
 			.Post(data)
 			.subscribe((global) => {
-				//this.global.push(global);
-				this.global = [...this.global, global]
+				this.global.push(global);
 				console.log(this.global);
 			},
 			error => {
