@@ -5,6 +5,7 @@ import { Customer } from 'app/shared/models/customer.model';
 import { ProjectType } from 'app/shared/models/project-type.model';
 import { ExpenseUnit } from 'app/shared/models/expense-unit.model';
 import { TokenStorageService } from 'app/shared/services/auth/token-storage.service';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-project-list',
@@ -27,16 +28,19 @@ export class ProjectListComponent implements OnInit {
   public selectedExpenseUnit:ExpenseUnit;
   filteredExpenseUnits: any[];
 
-  dateStart: Date;
-  dateFinish: Date;
+
   
   es: any;
-  invalidDates: Array<Date>;
-
-  projectName = '';
-  projectNotes = '';
   
-  constructor(private odata: OData,private tokenStorageService:TokenStorageService) { }
+
+
+
+  projectform: FormGroup;
+  
+  
+  constructor(private odata: OData,
+              private tokenStorageService:TokenStorageService,
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.getAllProjects();
@@ -55,6 +59,16 @@ export class ProjectListComponent implements OnInit {
       today: 'Hoy',
       clear: 'Borrar'
   }
+
+  this.projectform = this.fb.group({
+    'projectName': new FormControl('', Validators.required),
+    'selectedCustomer': new FormControl('', Validators.required),
+    'selectedProjectType': new FormControl('', Validators.required),
+    'selectedExpenseUnit': new FormControl('', Validators.required),
+    'dateRange': new FormControl('', Validators.required),
+    'projectNotes': new FormControl('')
+  
+});
   
   }
 
@@ -127,9 +141,8 @@ export class ProjectListComponent implements OnInit {
 			});
   }
   
-  setInvalidDate(){
-    this.invalidDates = [new Date(this.dateFinish),new Date(this.dateStart)];
-  }
+  
+
 
   filterCustomers(event) {
     this.filteredCustomers = [];
@@ -164,18 +177,21 @@ filterExpenseUnit(event) {
 }
 
 public create() {
-   
+
+  console.log(this.projectform);
+  console.log(this.projectform.value.projectName);
     let data = new Project();
-    data.Name = this.projectName;
+    data.Name = this.projectform.value.projectName;
     data.EmployeeId = parseInt(this.tokenStorageService.getEmployeeId());
-    data.ProjectTypeId = this.selectedProjectType.Id;
-    data.ExpenseUnitId = this.selectedExpenseUnit.Id;
-    data.CustomerId = this.selectedCustomer.Id;
-    data.InDate = this.dateStart;
-    data.OutDate = this.dateFinish;
-    data.Notes = this.projectNotes;
+    data.ProjectTypeId = this.projectform.value.selectedProjectType.Id;
+    data.ExpenseUnitId = this.projectform.value.selectedExpenseUnit.Id;
+    data.CustomerId = this.projectform.value.selectedCustomer.Id;
+    data.InDate = this.projectform.value.dateRange[0];
+    data.OutDate = this.projectform.value.dateRange[1];
+    data.Notes = this.projectform.value.projectNotes;
+    let projectData = {Project:data};
     this.odata.ProjectCreate
-    .Post(data)
+    .Post(projectData)
     .subscribe((project) => {
       this.projects.push(project);
      

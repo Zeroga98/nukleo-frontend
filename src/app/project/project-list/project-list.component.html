@@ -27,20 +27,20 @@
                               <div class="collapse" id="collapseExample" style="width:100%">
                                   <div class="card-block">
 
-                                      <form  (ngSubmit)="create(f)" #f="ngForm">
+                                      <form  (ngSubmit)="create()" [formGroup]="projectform">
 
                                           <div class="form-group">
                                               <div class="row">
                                                   
                                                   <div class="col-md-4">
                                                       <span class="ui-float-label">
-                                                          <input [(ngModel)]="projectName" [ngModelOptions]="{standalone: true}" required id="float-input" type="text" size="30" pInputText> 
+                                                          <input formControlName="projectName"   id="float-input" type="text" size="30" pInputText> 
                                                           <label for="float-input">Nombre del Proyecto</label>
                                                       </span>
                                                   </div>
 
                                                   <div class="col-md-4">
-                                                    <p-autoComplete [(ngModel)]="selectedCustomer" [ngModelOptions]="{standalone: true}" [suggestions]="filteredCustomers" (completeMethod)="filterCustomers($event)" [size]="30"
+                                                    <p-autoComplete formControlName="selectedCustomer"    [suggestions]="filteredCustomers" (completeMethod)="filterCustomers($event)" [size]="30"
                                                       [minLength]="1" placeholder="Seleccione Cliente" [dropdown]="true" field="Name">
 
                                                           <ng-template let-customer pTemplate="item">
@@ -53,7 +53,7 @@
                                                   </div>
 
                                                   <div class="col-md-4">
-                                                    <p-autoComplete [(ngModel)]="selectedProjectType" [ngModelOptions]="{standalone: true}" [suggestions]="filteredProjectTypes" (completeMethod)="filterProjectTypes($event)" [size]="30"
+                                                    <p-autoComplete formControlName="selectedProjectType"   [suggestions]="filteredProjectTypes" (completeMethod)="filterProjectTypes($event)" [size]="30"
                                                       [minLength]="1" placeholder="Seleccione Tipo de Proyecto" [dropdown]="true" field="Description">
 
                                                           <ng-template let-customer pTemplate="item">
@@ -72,7 +72,7 @@
                                               <div class="row">
 
                                                 <div class="col-md-4">
-                                                    <p-autoComplete [(ngModel)]="selectedExpenseUnit" [ngModelOptions]="{standalone: true}" [suggestions]="filteredExpenseUnits" (completeMethod)="filterExpenseUnit($event)" [size]="30"
+                                                    <p-autoComplete formControlName="selectedExpenseUnit"  [suggestions]="filteredExpenseUnits" (completeMethod)="filterExpenseUnit($event)" [size]="30"
                                                       [minLength]="1" placeholder="Seleccione Unidad de Gasto" [dropdown]="true" field="Name">
 
                                                           <ng-template let-expenseUnit pTemplate="item">
@@ -84,25 +84,17 @@
                                                     </p-autoComplete>
                                                 </div>
 
-                                                <div class="col-md-4">
+                                                <div class="col-md-8">
 
                                                     <span class="ui-float-label">
-                                                        <p-calendar id="dateStart" [(ngModel)]="dateStart"  (onSelect)="setInvalidDate()" [ngModelOptions]="{standalone: true}" [locale]="es" dateFormat="dd/mm/yy"></p-calendar> 
-                                                        <label for="dateStart">Fecha de Inicio</label>
+                                                        <p-calendar formControlName="dateRange" id="dateRange"  selectionMode="range" readonlyInput="true" [locale]="es" dateFormat="dd/mm/yy"></p-calendar>
+                                                        <label for="dateRange">Fecha de Inicio - Fecha de Fin</label>
                                                     </span>
 
                                                     
                                                 </div>
 
-                                                <div class="col-md-4">
-
-                                                    <span class="ui-float-label">
-                                                        <p-calendar id="dateFinish" [(ngModel)]="dateFinish"  [disabledDates]="invalidDates" [ngModelOptions]="{standalone: true}" [locale]="es" dateFormat="dd/mm/yy"></p-calendar> 
-                                                        <label for="dateFinish">Fecha de Inicio</label>
-                                                    </span>
-                                                 
-                                                  
-                                                </div>
+                                              
 
           
                                               </div>
@@ -111,13 +103,13 @@
                                           <div class="form-group">
                                               <div class="row">
                                                   <div class="col-md-4">
-                                                    <textarea [(ngModel)]="projectNotes" [ngModelOptions]="{standalone: true}" rows="4" cols="50" pInputTextarea autoResize="autoResize"></textarea>
+                                                    <textarea formControlName="projectNotes" rows="4" cols="50" pInputTextarea autoResize="autoResize"></textarea>
                                                   </div>
                                               </div>
                                           </div>
                                           
 
-                                          <button type="submit" class="btn btn-primary margin-inline pull-right" [disabled]="f.invalid">Guardar</button>
+                                          <button type="submit" class="btn btn-primary margin-inline pull-right" [disabled]="!projectform.valid">Guardar</button>
                                           <button type="button" class="btn btn-danger margin-inline pull-right" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                               Cancelar
                                           </button>
@@ -183,22 +175,7 @@
                                       </div>
                                   </div>
                               </div>
-                              <div class="card-block">
-                                  <div class="row">
-                                      <div class="col-lg-6">
-                                          <div class="mb-5">
-                                              <br />
-                                              <br />
-                                              <div class="collapse" id="collapseExample">
-                                                  <div class="card card-block">
-                                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid
-                                                  </div>
-                                              </div>
-                                              <br />
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                              
                           </div>
                       </section>
                   </div>
