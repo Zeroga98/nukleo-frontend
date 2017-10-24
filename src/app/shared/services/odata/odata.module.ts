@@ -6,6 +6,9 @@ import { ODataGlobal } from './odata-global';
 import { ODataConcept } from './odata-concept';
 import { ODataEmployees } from './odata-employees';
 import { ODataCategories } from './odata-categories';
+import { ODataProject } from 'app/shared/services/odata/odata-project';
+import { ODataCustomer } from 'app/shared/services/odata/odata-customers';
+import { ODataProjectType } from 'app/shared/services/odata/odata-project-types';
 
 @NgModule({
     declarations: [],
@@ -16,7 +19,10 @@ import { ODataCategories } from './odata-categories';
       ODataGlobal,
       ODataConcept,
       ODataEmployees,
-      ODataCategories
+      ODataCategories,
+      ODataProject,
+      ODataCustomer,
+      ODataProjectType
     ]
 })
 

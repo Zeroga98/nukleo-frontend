@@ -23,6 +23,7 @@ import { GlobalModule } from 'app/global/global.module';
 import { ErrorPageComponent } from 'app/shared/error-page/error-page.component';
 import { AuthGuardLazy } from 'app/shared/services/auth/auth-guard-lazy.service';
 
+
 declare var NProgress: any;
 
 @NgModule({
