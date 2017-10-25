@@ -30,7 +30,7 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <p-autoComplete required field="Name" [(ngModel)]="newOrder.Origin" name="origin" [suggestions]="resultsSearch" (completeMethod)="search($event)"></p-autoComplete>
+                                                        <p-autoComplete [dropdown]="true" required field="Name" [(ngModel)]="newOrder.Origin" name="origin" [suggestions]="resultsSearch" (completeMethod)="search($event)"></p-autoComplete>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <span class="ui-float-label">
@@ -66,15 +66,18 @@
                                                             </ng-template>
                                                         </p-column>
                                                         <p-column field="OrderItems.length" header="Total de items"></p-column>
-                                                        <p-column field="Status" header="Estado"></p-column>
+                                                        <p-column field="StatusName" header="Estado"></p-column>
                                                         <p-column styleClass="col-button" header="Acciones">
                                                             <ng-template let-searchVal="rowData" let-i="rowIndex" pTemplate="body">
-                                                                <button type="button" class="btn btn-icon btn-danger mr-2 mb-2 swal-btn-warning" (click)="delete(searchVal.Id, i)">
+                                                                <!--<button type="button" class="btn btn-icon btn-danger mr-2 mb-2 swal-btn-warning" (click)="delete(searchVal.Id, i)">
                                                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                                                </button>
+                                                                </button>-->
                                                                 <button type="button" class="btn btn-icon btn-primary mr-2 mb-2" (click)="update(searchVal)">
                                                                     <i class="icmn-spinner11" aria-hidden="true"></i>
                                                                 </button>
+                                                                <button type="button" class="btn btn-icon btn-warning mr-2 mb-2">
+	                                                                <i class="icmn-info" aria-hidden="true"></i>
+                                                              </button>
                                                             </ng-template>
                                                         </p-column>
                                                     </p-dataTable>
