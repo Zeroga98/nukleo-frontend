@@ -6,6 +6,13 @@
                     <div class="col-md-12">
                         <section class="card">
                             <div class="card-header" style="padding: .6rem 1.25rem;">
+                                <div class="pull-right margin-left-20">
+                                    <div class="dropdown d-inline-block">
+                                        <button (click)="openEdit = !openEdit" [ngClass]="{ 'btn-danger': openEdit, 'btn-primary': !openEdit }" class="btn btn-rounded margin-inline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            <i [hidden]="openEdit" class="fa fa-plus" aria-hidden="true"></i> {{!openEdit? 'Añadir' : 'Cancelar'}}
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="pull-right ">
                                     <div class="search-block">
                                         <div class="form-input-icon form-input-icon-right">
@@ -17,21 +24,23 @@
                                 <span class="cat__core__title" style="position:relative; top:4px">
                                         <strong>Cotizaciones</strong>
                                     </span>
-                                <div style="width:100%">
+                                <div class="collapse" id="collapseExample" style="width:100%">
                                     <div class="card-block">
                                         <form #form name="form" (ngSubmit)="create(newOrder)">
-                                        	<div class="row">
-                                        		<div class="col-md-4">
-                                        			<p-autoComplete required field="FirstName" [(ngModel)]="newOrder.Origin" name="origin" [suggestions]="resultsSearch" (completeMethod)="search($event)"></p-autoComplete>
-                                        		</div>
-                                        		<div class="col-md-4">
-													<span class="ui-float-label">
-													    <input id="float-input" required type="text" size="30" pInputText name="name" [(ngModel)]="newOrder.Name"> 
-													    <label for="float-input">Código</label>
-													</span>
-												</div>
-                                        	</div>
-                                        	<button type="submit" class="btn btn-primary margin-inline pull-right" [disabled]="form.$invalid">Guardar</button>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <p-autoComplete required field="Name" [(ngModel)]="newOrder.Origin" name="origin" [suggestions]="resultsSearch" (completeMethod)="search($event)"></p-autoComplete>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <span class="ui-float-label">
+														    <input id="float-input" required type="text" size="30" pInputText name="name" [(ngModel)]="newOrder.Name"> 
+														    <label for="float-input">Código</label>
+														</span>
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary margin-inline pull-right" [disabled]="form.$invalid">Guardar</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -46,13 +55,13 @@
                                                     <p-dataTable [value]="orders" [globalFilter]="filterText" [immutable]="false" [editable]="true">
                                                         <p-column field="Id" header="# Orden"></p-column>
                                                         <p-column field="CreatedAt" header="Fecha">
-                                                        	<ng-template let-col let-car="rowData" pTemplate="body">
+                                                            <ng-template let-col let-car="rowData" pTemplate="body">
                                                                 <span>{{ car[col.field] | date }}</span>
                                                             </ng-template>
                                                         </p-column>
-                                                        <p-column field="{{(typeOrder == 'customer'? 'Customer.FirstName' : 'Supplier.Name')}}" header="{{(typeOrder == 'customer'? 'Cliente' : 'Proveedor')}}"></p-column>
+                                                        <p-column field="{{(typeOrder == 'customer'? 'Customer.Name' : 'Supplier.Name')}}" header="{{(typeOrder == 'customer'? 'Cliente' : 'Proveedor')}}"></p-column>
                                                         <p-column field="Total" header="Total">
-                                                        	<ng-template let-col let-car="rowData" pTemplate="body">
+                                                            <ng-template let-col let-car="rowData" pTemplate="body">
                                                                 <span>{{ car[col.field] | currency:'USD':true:'4.0-2' }}</span>
                                                             </ng-template>
                                                         </p-column>
@@ -63,8 +72,8 @@
                                                                 <button type="button" class="btn btn-icon btn-danger mr-2 mb-2 swal-btn-warning" (click)="delete(searchVal.Id, i)">
                                                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                                                 </button>
-                                                                <button type="button" class="btn btn-icon btn-primary mr-2 mb-2" (click)="update(searchVal)">   
-                                                                    <i class="icmn-spinner11" aria-hidden="true"></i>   
+                                                                <button type="button" class="btn btn-icon btn-primary mr-2 mb-2" (click)="update(searchVal)">
+                                                                    <i class="icmn-spinner11" aria-hidden="true"></i>
                                                                 </button>
                                                             </ng-template>
                                                         </p-column>

@@ -12,6 +12,7 @@ import { AuthInterceptor } from "./services/auth/auth-interceptor";
 import { AuthService } from "./services/auth/auth.service";
 import { ExpenseUnitService } from './services/api/expense-unit.service';
 import { StorageService } from './services/api/storage.service';
+import { OrderService } from './services/api/orders.service';
 import { TokenStorageService } from 'app/shared/services/auth/token-storage.service';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { TokenStorageService } from 'app/shared/services/auth/token-storage.serv
       	ODataServiceFactory,
 		ExpenseUnitService,
 		StorageService,
+		OrderService,
 		TokenStorageService
 	]
 })

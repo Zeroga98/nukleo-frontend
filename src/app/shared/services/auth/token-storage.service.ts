@@ -32,4 +32,9 @@ export class TokenStorageService {
 
   }
 
+  public getEmployeeId(){
+    let token = JSON.parse(localStorage.getItem('session'));
+    return token['employeeId'];
+  }
+
 }

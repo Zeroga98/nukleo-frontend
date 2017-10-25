@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { OData } from '../../shared/services/odata/odata';
 import { Order } from '../../shared/models/order.model';
+import { OrderService } from '../../shared/services/api/orders.service';
 
 @Component({
 	selector: 'app-orders-list',
@@ -12,28 +13,29 @@ import { Order } from '../../shared/models/order.model';
 export class OrdersListComponent implements OnInit {
 
 	public orders: Order[];
-	public employees: any[];
+	public suppliers: any[];
 	public customers: any[];
 	public typeOrder: string;
 	public searchText: string;
 	public resultsSearch: string[];
 	public newOrder = { Origin: {}, TypeId: 0 };
+	public openEdit: boolean = false;
 
-	constructor(private odata: OData, private router: Router, private activatedRoute: ActivatedRoute) { }
+	constructor(private odata: OData, private router: Router, private activatedRoute: ActivatedRoute, private orderService: OrderService) { }
 
 	ngOnInit() {
 		this.activatedRoute.parent.params.subscribe(params => {
 			this.typeOrder = params["type"];
-			this.typeOrder = (this.typeOrder == 'supplier') ? 'employee' : this.typeOrder;
 			this.newOrder.TypeId = (this.typeOrder == 'customer') ? 0 : 1;
 
 			if (this.typeOrder == 'customer') {
 				this.getCustomerAll();
 			} else {
-				this.getEmployeesAll();
+				this.getSupplierAll();
 			}
+
+			this.getAll();
 		});
-		this.getAll();
 	}
 
 	public getAll() {
@@ -43,8 +45,12 @@ export class OrdersListComponent implements OnInit {
 			.Filter("Type eq " + ((this.typeOrder == 'customer') ? "'Customer'" : "'Supplier'"))
 			.Exec()
 			.subscribe((orders) => {
-				this.orders = orders;
-				console.log(this.orders);
+				this.orders = orders.map(data => {
+					if(data.Customer){
+						data.Customer.Name = data.Customer.FirstName;
+					}
+					return data;
+				});
 			},
 			error => {
 			});
@@ -54,25 +60,32 @@ export class OrdersListComponent implements OnInit {
 		if (data) {
 			data.OriginId = data.Origin.Id;
 			delete data["Origin"];
-			console.log(data);
-			//http://tec-api-administration.azurewebsites.net/odata/Orders/CreateOrder
-			this.odata.Concept
-				.Post(data)
-				.subscribe((data) => {
-					this.orders.push(data);
-					console.log(data);
+			this.orderService
+				.create(data)
+				.subscribe((response: any) => {
+					let order = JSON.parse(response.value);
+					if(this.typeOrder == 'customer'){
+						order.Customer = this.customers.find(customer => {
+							return customer.Id == order.CustomerId;
+						});
+					} else {
+						order.Supplier = this.suppliers.find(supplier => {
+							return supplier.Id == order.SupplierId;
+						});
+					}
+					this.orders.push(order);
 				},
 				error => {
 				});
 		}
 	}
 
-	public getEmployeesAll() {
-		this.odata.Employees
+	public getSupplierAll() {
+		this.odata.Supplier
 			.Query()
 			.Exec()
-			.subscribe((employees) => {
-				this.employees = employees;
+			.subscribe((suppliers) => {
+				this.suppliers = suppliers;
 			},
 			error => {
 			});
@@ -83,7 +96,10 @@ export class OrdersListComponent implements OnInit {
 			.Query()
 			.Exec()
 			.subscribe((customers) => {
-				this.customers = customers;
+				this.customers = customers.map(data => {
+					data.Name = data.FirstName;
+					return data;
+				});
 			},
 			error => {
 			});
@@ -91,7 +107,7 @@ export class OrdersListComponent implements OnInit {
 
 	public search(event) {
 		this.resultsSearch = eval("this." + this.typeOrder + "s").filter((data) => {
-			return data.FirstName.indexOf(event.query) != -1;
+			return data.Name.indexOf(event.query) != -1;
 		});
 	}
 

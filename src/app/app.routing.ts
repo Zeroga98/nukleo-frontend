@@ -12,7 +12,8 @@ export const routes: Routes = [
 	{ path: 'global', loadChildren: 'app/global/global.module#GlobalModule', canLoad: [AuthGuardLazy] },
 	{ path: 'concepts', loadChildren: 'app/concepts/concepts.module#ConceptsModule', canLoad: [AuthGuardLazy] },
 	{ path: 'orders/:type', loadChildren: 'app/orders/orders.module#OrdersModule', canLoad: [AuthGuardLazy] },
-
+	{ path: 'projects', loadChildren: 'app/project/project.module#ProjectModule', canLoad: [AuthGuardLazy] },
+	
 	{ path: 'error-page', component: ErrorPageComponent },
 	{ path: '**', redirectTo: 'error-page' }
 ];
