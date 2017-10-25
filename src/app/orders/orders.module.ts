@@ -8,6 +8,7 @@ import {FormlyModule, FormlyBootstrapModule} from 'ng-formly';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './orders.component';
 import { OrdersListComponent } from './orders-list/orders-list.component';
+import { OrdersDetailComponent } from './orders-detail/orders-detail.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { OrdersListComponent } from './orders-list/orders-list.component';
   ],
   declarations: [
   	OrdersComponent, 
-  	OrdersListComponent
+  	OrdersListComponent, OrdersDetailComponent
   ]
 })
 export class OrdersModule { }

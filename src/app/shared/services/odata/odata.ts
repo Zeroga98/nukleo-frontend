@@ -12,6 +12,7 @@ import { ODataCustomer } from './odata-customer';
 import { ODataProject } from 'app/shared/services/odata/odata-project';
 import { ODataSupplier } from 'app/shared/services/odata/odata-supplier';
 import { ODataProjectType } from 'app/shared/services/odata/odata-project-types';
+import { ODataOrderItem } from './odata-order-item';
 
 @Injectable()
 export class OData{
@@ -27,6 +28,7 @@ export class OData{
     public ProjectType;
     public ProjectCreate;
     public Supplier;
+    public OrderItem;
 
     constructor(
     	private odataExpenseUnit: ODataExpenseUnits, 
@@ -38,7 +40,8 @@ export class OData{
         private odataProject: ODataProject,
         private odataCustomer: ODataCustomer,
         private odataProjectType: ODataProjectType,
-        private odataSupplier: ODataSupplier
+        private odataSupplier: ODataSupplier,
+        private odataOrderItem: ODataOrderItem
    	){
 		this.ExpenseUnit = odataExpenseUnit.service; 	
 		this.Global = odataGlobal.service; 	
@@ -52,6 +55,7 @@ export class OData{
         this.ProjectType = odataProjectType.service;
         this.ProjectCreate = odataProject.createProject;
         this.Supplier = odataSupplier.service;
+        this.OrderItem = odataOrderItem.service;
     }
 }
 

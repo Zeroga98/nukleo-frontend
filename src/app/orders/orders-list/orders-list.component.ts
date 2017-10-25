@@ -49,7 +49,7 @@ export class OrdersListComponent implements OnInit {
 					if(data.Customer){
 						data.Customer.Name = data.Customer.FirstName;
 					}
-					data.StatusName = this.parserOrderState(data.Status);
+					data.StatusName = Order.parseState(data.Status);
 					return data;
 				});
 			},
@@ -81,6 +81,11 @@ export class OrdersListComponent implements OnInit {
 		}
 	}
 
+	public showOrderDetail(orderId){
+		this.router.navigate([`orders/${ this.typeOrder }/${ orderId }/order-detail`]);
+
+	}
+
 	public getSupplierAll() {
 		this.odata.Supplier
 			.Query()
@@ -110,23 +115,5 @@ export class OrdersListComponent implements OnInit {
 		this.resultsSearch = eval("this." + this.typeOrder + "s").filter((data) => {
 			return data.Name.indexOf(event.query) != -1;
 		});
-	}
-
-	private parserOrderState(data){
-		if(data == 0 || data == 'WaitingForResponse'){
-			return "Esperando";
-		} else if(data == 1 || data == 'Accepted'){
-			return "Aceptada";
-		} else if(data == 2 || data == 'Rejected'){
-			return "Rechazada";
-		} else if(data == 3 || data == 'WaitingForPreBill'){
-			return "Esperando 2";
-		} else if(data == 4 || data == 'PreBilled'){
-			return "Esperando 3";
-		} else if(data == 5 || data == 'Billed'){
-			return "Pagada";
-		} else if(data == 6 || data == 'Cancelled'){
-			return "Cancelada";
-		}
 	}
 }

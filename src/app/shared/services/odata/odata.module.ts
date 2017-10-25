@@ -11,6 +11,7 @@ import { ODataCustomer } from './odata-customer';
 import { ODataProject } from './odata-project';
 import { ODataProjectType } from './odata-project-types';
 import { ODataSupplier } from './odata-supplier';
+import { ODataOrderItem } from './odata-order-item';
 
 @NgModule({
     declarations: [],
@@ -26,7 +27,8 @@ import { ODataSupplier } from './odata-supplier';
       ODataCustomer,
       ODataProject,
       ODataProjectType,
-      ODataSupplier
+      ODataSupplier,
+      ODataOrderItem
     ]
 })
 
