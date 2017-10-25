@@ -5,14 +5,23 @@ import { Project } from 'app/shared/models/project.model';
 @Injectable()
 export class ODataProject {
 
-    private entity: string = "Projects";
-    private createProjectUrl: string = "Projects/CreateProject";
-    public service : ODataService<Project>;
-    public createProject : ODataService<Project>;
+    private url: string = "Projects";
+
 
     constructor(private odataFactory: ODataServiceFactory){
-        this.service = this.odataFactory.CreateService<Project>(this.entity);
 
-        this.createProject = this.odataFactory.CreateService<Project>(this.createProjectUrl);
     }
+
+    getAllProjects(){
+        return this.odataFactory.CreateService<Project>(this.url);
+    }
+
+    createProject(){
+        return this.odataFactory.CreateService<Project>(this.url+'/CreateProject');
+    }
+
+    getProjectExpenses(id){
+        return this.odataFactory.CreateService<Project>(this.url+'/('+id+')/Expenses');
+    }
+    
 }

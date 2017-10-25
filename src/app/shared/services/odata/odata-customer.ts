@@ -5,10 +5,12 @@ import { ODataConfiguration, ODataServiceFactory, ODataService } from "angular-o
 @Injectable()
 export class ODataCustomer {
 
-	private entity: string = "Customers";
-    public service : ODataService<any>;
+	private url: string = "Customers";
 
     constructor(private odataFactory: ODataServiceFactory){
-        this.service = this.odataFactory.CreateService<any>(this.entity);
+    }
+
+    getAllCustomers(){
+        return this.odataFactory.CreateService<any>(this.url);
     }
 }

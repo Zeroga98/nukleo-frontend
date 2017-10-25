@@ -26,7 +26,7 @@ export class ExpenseUnitListComponent implements OnInit {
   }
 
   public getAll(){
-    this.odata.ExpenseUnit
+    this.odata.ExpenseUnit.getAllExpenseUnits()
     .Query() 
     .Exec()
     .subscribe((expenseUnits) => {
@@ -38,7 +38,7 @@ export class ExpenseUnitListComponent implements OnInit {
 
   public create(data: ExpenseUnit) {
     if(data){
-      this.odata.ExpenseUnit
+      this.odata.ExpenseUnit.getAllExpenseUnits()
       .Post(data)
       .subscribe((expenseUnit) => {
         this.expenseUnits.push(expenseUnit);
@@ -50,7 +50,7 @@ export class ExpenseUnitListComponent implements OnInit {
   }
 
   public update(data: ExpenseUnit){
-    this.odata.ExpenseUnit
+    this.odata.ExpenseUnit.getAllExpenseUnits()
     .Put(data, data.Id)
     .subscribe((expenseUnits) => {},
     error => {
@@ -59,7 +59,7 @@ export class ExpenseUnitListComponent implements OnInit {
   }
 
   public delete(expenseUnitId, index){
-    this.odata.ExpenseUnit
+    this.odata.ExpenseUnit.getAllExpenseUnits()
     .Delete(expenseUnitId)
     .subscribe((expenseUnits) => {
       this.expenseUnits.splice(index, 1);

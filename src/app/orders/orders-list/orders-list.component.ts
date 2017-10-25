@@ -98,7 +98,7 @@ export class OrdersListComponent implements OnInit {
 	}
 
 	public getCustomerAll() {
-		this.odata.Customer
+		this.odata.Customer.getAllCustomers()
 			.Query()
 			.Exec()
 			.subscribe((customers) => {

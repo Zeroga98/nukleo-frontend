@@ -6,6 +6,7 @@ import { ProjectType } from 'app/shared/models/project-type.model';
 import { ExpenseUnit } from 'app/shared/models/expense-unit.model';
 import { TokenStorageService } from 'app/shared/services/auth/token-storage.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-project-list',
@@ -31,10 +32,12 @@ export class ProjectListComponent implements OnInit {
   es: any;
   projectform: FormGroup;
 
+  selectedIdProject:number;
 
   constructor(private odata: OData,
     private tokenStorageService: TokenStorageService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getAllProjects();
@@ -65,8 +68,20 @@ export class ProjectListComponent implements OnInit {
     });
   }
 
+  open(content,id) {
+    this.selectedIdProject = id;
+    this.modalService.open(content,{
+      size:'lg',
+      
+    } ).result.then((result) => {
+      
+    }, (reason) => {
+      
+    });
+  }
+
   public getAllProjects() {
-		this.odata.Project
+		this.odata.Project.getAllProjects()
       .Query()
       .Expand("Employee")
 			.Exec()
@@ -78,7 +93,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   public getAllProjectTypes() {
-		this.odata.ProjectType
+		this.odata.ProjectType.getAllProjectTypes()
       .Query()
 			.Exec()
 			.subscribe((projectsTypes) => {
@@ -96,7 +111,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   public getAllExpenseUnits() {
-		this.odata.ExpenseUnit
+		this.odata.ExpenseUnit.getAllExpenseUnits()
       .Query()
 			.Exec()
 			.subscribe((expenseUnits) => {
@@ -114,7 +129,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   public getAllCustomers() {
-		this.odata.Customer
+		this.odata.Customer.getAllCustomers()
       .Query()
 			.Exec()
 			.subscribe((customers) => {
@@ -180,7 +195,7 @@ export class ProjectListComponent implements OnInit {
     data.OutDate = this.projectform.value.dateRange[1];
     data.Notes = this.projectform.value.projectNotes;
     let projectData = { Project: data };
-    this.odata.ProjectCreate
+    this.odata.Project.createProject()
       .Post(projectData)
       .subscribe((project) => {
         this.projects.push(project);

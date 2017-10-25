@@ -5,10 +5,13 @@ import { ExpenseUnit } from '../../models/expense-unit.model';
 @Injectable()
 export class ODataExpenseUnits {
 
-	private entity: string = "ExpenseUnits";
-    public service : ODataService<ExpenseUnit>;
-
+	private url: string = "ExpenseUnits";
+    
     constructor(private odataFactory: ODataServiceFactory){
-        this.service = this.odataFactory.CreateService<ExpenseUnit>(this.entity);
+       
+    }
+
+    getAllExpenseUnits(){
+        return this.odataFactory.CreateService<ExpenseUnit>(this.url);
     }
 }

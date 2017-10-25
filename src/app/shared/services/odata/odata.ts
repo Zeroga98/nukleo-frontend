@@ -43,17 +43,21 @@ export class OData{
         private odataSupplier: ODataSupplier,
         private odataOrderItem: ODataOrderItem
    	){
-		this.ExpenseUnit = odataExpenseUnit.service; 	
+		this.ExpenseUnit = odataExpenseUnit; 	
 		this.Global = odataGlobal.service; 	
 		this.Concept = odataConcept.service; 	
         this.Employees = odataEmployees.service; 
         this.Categories = odataCategories.service;
         this.Order = odataOrder.service; 
-        this.Customer = odataCustomer.service;
+        this.Customer = odataCustomer;
         this.Categories = odataCategories.service; 
-        this.Project = odataProject.service;
-        this.ProjectType = odataProjectType.service;
-        this.ProjectCreate = odataProject.createProject;
+
+
+        this.Project = odataProject;
+        this.ProjectType = odataProjectType;
+
+
+        
         this.Supplier = odataSupplier.service;
         this.OrderItem = odataOrderItem.service;
     }

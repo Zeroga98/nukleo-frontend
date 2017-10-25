@@ -49,7 +49,7 @@ export class GlobalListComponent implements OnInit {
 	}
 
 	public update(data: Global) {
-		this.odata.ExpenseUnit
+		this.odata.ExpenseUnit.getAllExpenseUnits()
 			.Put(data, data.Id)
 			.subscribe((global) => {
 			},

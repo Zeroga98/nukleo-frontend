@@ -164,7 +164,7 @@
 
                                                               <button type="button" 
                                                               class="btn btn-icon btn-warning mr-2 mb-2"
-                                                              data-toggle="modal" data-target="#projectModal">
+                                                              (click)="open(content,searchVal.Id)">
                                                                   <i class="icmn-info" aria-hidden="true"></i>
                                                               </button>
                                                           </ng-template>
@@ -185,28 +185,73 @@
   </div>
 </div>
 
-<div class="modal fade modal-size-large" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="myModalLabel">Proyectos</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-lg-12">
+
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Proyectos</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+            <div class="row">
+                    <div class="col-lg-12">
+
+                        <ngb-tabset>
                             
-                        </div>
+                            <ngb-tab>
+                              <ng-template ngbTabTitle><b>Gastos</b> </ng-template>
+                              <ng-template ngbTabContent>
+
+                                  <app-project-list-expenses projectId="{{selectedIdProject}}"></app-project-list-expenses>
+
+
+                              </ng-template>
+                            </ngb-tab>
+
+                            <ngb-tab>
+                              <ng-template ngbTabTitle><b>Actividades</b> </ng-template>
+                              <ng-template ngbTabContent>
+
+                                  <app-project-list-activities projectId="{{selectedIdProject}}" ></app-project-list-activities>
+                              </ng-template>
+                            </ngb-tab>
+
+                            <ngb-tab>
+                              <ng-template ngbTabTitle><b>Presupuestos</b> </ng-template>
+                              <ng-template ngbTabContent>
+
+                                
+                              </ng-template>
+                            </ngb-tab>
+
+                            <ngb-tab>
+                              <ng-template ngbTabTitle><b>Compras </b> </ng-template>
+                              <ng-template ngbTabContent>
+
+                                
+                              </ng-template>
+                            </ngb-tab>
+
+                            <ngb-tab>
+                              <ng-template ngbTabTitle><b>Equipo</b> </ng-template>
+                              <ng-template ngbTabContent>
+
+                                
+                              </ng-template>
+                            </ngb-tab>
+                           
+                          </ngb-tabset>
+                        
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar</button>
-            </div>
-        </div>
+      
     </div>
-</div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c()">Cerrar</button>
+    </div>
+</ng-template>
+  
