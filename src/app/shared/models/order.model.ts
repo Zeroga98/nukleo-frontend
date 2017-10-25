@@ -23,6 +23,7 @@ export class Order {
 	public BudgetId: number;
 	public AuthorizationRequestId: number;
 	public CommercialTermsId: number;
+	public OriginId: string;
 
 	constructor() {}
 }

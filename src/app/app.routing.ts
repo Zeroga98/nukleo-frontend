@@ -11,6 +11,8 @@ export const routes: Routes = [
 	{ path: 'expense-unit', loadChildren: 'app/expense-unit/expense-unit.module#ExpenseUnitModule', canLoad: [AuthGuardLazy] },
 	{ path: 'global', loadChildren: 'app/global/global.module#GlobalModule', canLoad: [AuthGuardLazy] },
 	{ path: 'concepts', loadChildren: 'app/concepts/concepts.module#ConceptsModule', canLoad: [AuthGuardLazy] },
+	{ path: 'orders/:type', loadChildren: 'app/orders/orders.module#OrdersModule', canLoad: [AuthGuardLazy] },
+
 	{ path: 'error-page', component: ErrorPageComponent },
 	{ path: '**', redirectTo: 'error-page' }
 ];

@@ -250,8 +250,35 @@
                            
                         </ul>
                 </li>
-
 -->
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-wrench"></span>
+                            Ventas
+                        </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);" [routerLink]="['orders/customer/orders-list']">
+                            <span class="cat__menu-left__icon icmn-key2"></span>
+                            Cotizaciones
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="cat__menu-left__item cat__menu-left__submenu">
+                <a href="javascript: void(0);">
+                            <span class="cat__menu-left__icon icmn-wrench"></span>
+                            Compras
+                        </a>
+                <ul class="cat__menu-left__list">
+                    <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
+                        <a href="javascript: void(0);" [routerLink]="['orders/supplier/orders-list']">
+                            <span class="cat__menu-left__icon icmn-key2"></span>
+                            Ordenes de compra
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <li class="cat__menu-left__item cat__menu-left__submenu">
                 <a href="javascript: void(0);">
                             <span class="cat__menu-left__icon icmn-wrench"></span>
@@ -260,15 +287,15 @@
                 <ul class="cat__menu-left__list">
                     <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);" [routerLink]="['supplier-invoices/fix-supplier-invoices']">
-                                        <span class="cat__menu-left__icon icmn-key2"></span>
-                                        Liquidar Facturas
-                                    </a>
+                            <span class="cat__menu-left__icon icmn-key2"></span>
+                            Liquidar Facturas
+                        </a>
                     </li>
                     <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
                         <a href="javascript: void(0);" [routerLink]="['supplier-invoices/supplier-invoices-list']">
-                                            <span class="cat__menu-left__icon icmn-key2"></span>
-                                            Administrador de Facturas
-                                        </a>
+                            <span class="cat__menu-left__icon icmn-key2"></span>
+                            Administrador de Facturas
+                        </a>
                     </li>
                     <!-- <li class="cat__menu-left__item" [routerLinkActive]="['cat__menu-left__item--active']">
                                 <a [routerLink]="['pages/login-alpha']">
