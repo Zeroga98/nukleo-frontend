@@ -16,9 +16,9 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { SharedModule } from 'app/shared/shared.module';
 
-import { SupplierInvoicesModule } from 'app/supplier-invoices/supplier-invoices.module';
-import { ExpenseUnitModule } from 'app/expense-unit/expense-unit.module';
-import { GlobalModule } from 'app/global/global.module';
+
+
+
 
 import { ErrorPageComponent } from 'app/shared/error-page/error-page.component';
 import { AuthGuardLazy } from 'app/shared/services/auth/auth-guard-lazy.service';
