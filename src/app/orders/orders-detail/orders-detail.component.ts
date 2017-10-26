@@ -31,6 +31,7 @@ export class OrdersDetailComponent implements OnInit {
 
 	private getOrderById(){
 		this.odata.Order
+			.odata()
 			.Get(this.orderId)
 			.Expand("OrderItems, Customer, Supplier")
 			.Exec()

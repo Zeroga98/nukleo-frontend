@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import _ from "lodash";
 
 import { OData } from '../../shared/services/odata/odata';
 import { ExpenseUnit } from '../../shared/models/expense-unit.model';
@@ -74,7 +73,9 @@ export class ExpenseUnitListComponent implements OnInit {
       .Query()
       .Exec()
       .subscribe((globals) => {
-        _.find(this.dataFields[0].fieldGroup, { key: 'GlobalId' }).templateOptions.options = globals.map(function(global) {
+        this.dataFields[0].fieldGroup.find(field => {
+          return field.key == 'GlobalId';
+        }).templateOptions.options = globals.map(function(global) {
           return {
             value: global.Id,
             label: global.Name
@@ -90,7 +91,9 @@ export class ExpenseUnitListComponent implements OnInit {
       .Query()
       .Exec()
       .subscribe((employees) => {
-        _.find(this.dataFields[0].fieldGroup, { key: 'ResponsableId' }).templateOptions.options = employees.map(function(employee) {
+        this.dataFields[0].fieldGroup.find( field => {
+          return field.key == 'ResponsableId';
+        }).templateOptions.options = employees.map(function(employee) {
           return {
             value: employee.Id,
             label: `${employee.FirstName} ${(employee.LastName === null ? '' : employee.LastName)}`

@@ -6,9 +6,11 @@ import { Concept } from '../../models/concepts.model';
 export class ODataConcept {
 
 	private entity: string = "Concepts";
-    public service : ODataService<Concept>;
 
     constructor(private odataFactory: ODataServiceFactory){
-        this.service = this.odataFactory.CreateService<Concept>(this.entity);
+    }
+
+    public odata(){
+    	return this.odataFactory.CreateService<Concept>(this.entity);
     }
 }

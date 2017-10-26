@@ -6,9 +6,11 @@ import { Order } from '../../models/order.model';
 export class ODataOrder {
 
 	private entity: string = "Orders";
-    public service : ODataService<Order>;
 
     constructor(private odataFactory: ODataServiceFactory){
-        this.service = this.odataFactory.CreateService<Order>(this.entity);
+    }
+
+    public odata(){
+    	return this.odataFactory.CreateService<Order>(this.entity);	
     }
 }

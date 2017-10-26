@@ -40,6 +40,7 @@ export class OrdersListComponent implements OnInit {
 
 	public getAll() {
 		this.odata.Order
+			.odata()
 			.Query()
 			.Expand("OrderItems, Customer, Supplier")
 			.Filter("Type eq " + ((this.typeOrder == 'customer') ? "'Customer'" : "'Supplier'"))

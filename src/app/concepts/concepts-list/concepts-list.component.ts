@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import _ from "lodash";
 
 import { OData } from '../../shared/services/odata/odata';
 import { Concept } from '../../shared/models/concepts.model';
@@ -27,6 +26,7 @@ export class ConceptsListComponent implements OnInit {
 
   public getAll(){
     this.odata.Concept
+    .odata()
     .Query() 
     .Expand("Category")
     .Exec()
@@ -40,9 +40,12 @@ export class ConceptsListComponent implements OnInit {
   public create(data: Concept) {
     if(data){
       this.odata.Concept
+      .odata()
       .Post(data)
       .subscribe((concept) => {
-        concept.Category = _.find(this.categorys, { Id: parseInt(data.CategoryId.toString()) });
+        concept.Category = this.categorys.find(category => {
+          return category.Id == parseInt(data.CategoryId.toString());
+        });
         this.concepts.push(concept);
       },
       error => {
@@ -55,6 +58,7 @@ export class ConceptsListComponent implements OnInit {
   	delete data["Category"];
 
     this.odata.Concept
+    .odata()
     .Put(data, data.Id)
     .subscribe((concepts) => {
       console.log(concepts);
@@ -67,6 +71,7 @@ export class ConceptsListComponent implements OnInit {
 
   public delete(ConceptId, index){
     this.odata.Concept
+    .odata()
     .Delete(ConceptId)
     .subscribe((Concepts) => {
     	this.concepts.splice(index, 1);
@@ -82,7 +87,9 @@ export class ConceptsListComponent implements OnInit {
       .Exec()
       .subscribe((categories) => {
         this.categorys = categories;
-        _.find(this.dataFields[0].fieldGroup, { key: 'CategoryId' }).templateOptions.options = categories.map(function(category) {
+        this.dataFields[0].fieldGroup.find(field => {
+          return 'CategoryId' == field.key;
+        }).templateOptions.options = categories.map(function(category) {
           return {
             value: category.Id,
             label: category.Name

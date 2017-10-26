@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import _ from "lodash";
 
 import { OData } from '../../shared/services/odata/odata';
 import { Global } from '../../shared/models/global.model';
@@ -74,7 +73,9 @@ export class GlobalListComponent implements OnInit {
 			.Query()
 			.Exec()
 			.subscribe((employees) => {
-				_.find(this.dataFields[0].fieldGroup, { key: 'ResponsableId' }).templateOptions.options = employees.map(function(employee) {
+				this.dataFields[0].fieldGroup.find(field => {
+					return field.key == 'ResponsableId';
+				}).templateOptions.options = employees.map(function(employee) {
 					return {
 						value: employee.Id,
 						label: `${employee.FirstName} ${(employee.LastName === null ? '' : employee.LastName)}`

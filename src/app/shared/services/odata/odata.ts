@@ -45,10 +45,10 @@ export class OData{
    	){
 		this.ExpenseUnit = odataExpenseUnit; 	
 		this.Global = odataGlobal.service; 	
-		this.Concept = odataConcept.service; 	
+		this.Concept = odataConcept; 	
         this.Employees = odataEmployees.service; 
         this.Categories = odataCategories.service;
-        this.Order = odataOrder.service; 
+        this.Order = odataOrder; 
         this.Customer = odataCustomer;
         this.Categories = odataCategories.service; 
 
