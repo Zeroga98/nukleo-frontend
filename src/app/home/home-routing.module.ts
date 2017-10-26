@@ -4,8 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from 'app/home/home.component';
 import { AuthGuardEager } from 'app/shared/services/auth/auth-guard-eager.service';
 
+import { ListDevicesComponent } from 'app/home/list-devices/list-devices.component';
+
 const homeRoutes: Routes =[
-  { path: '', component: HomeComponent,canActivate: [AuthGuardEager]}
+  { path: '', component: HomeComponent,canActivate: [AuthGuardEager],children: [
+    { path: 'devices-list', component: ListDevicesComponent }
+  ] }
 ]
 
 @NgModule({

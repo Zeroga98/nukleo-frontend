@@ -15,8 +15,8 @@ export class AuthService {
   ) {}
 
   public login(username,password){
-    return this.http.post(Environments.ENDPOINT+`/token`, 
-    `client_id=macheteapp&grant_type=password&password=`+password+`&userName=`+username,
+    return this.http.post(Environments.ENDPOINT+`/login`, 
+    `email=${ username }&password=${password}`,
     {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8'),
     }).subscribe(

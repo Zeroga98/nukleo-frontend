@@ -1,0 +1,11 @@
+.item-device{
+    background-color: white;
+    color: #524e4e;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 1.42rem;
+}
+.item-device__title{
+    font-weight: bold;
+    font-size: 1.14rem;
+}
