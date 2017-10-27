@@ -4,6 +4,11 @@
     border: 1px solid #ccc;
     border-radius: 15px;
     padding: 1.42rem;
+    outline: none;
+}
+.item-device:focus, .item-device:active{
+    border-color: rgb(76, 115, 277);
+    color: rgb(76, 115, 277);
 }
 .item-device__title{
     font-weight: bold;

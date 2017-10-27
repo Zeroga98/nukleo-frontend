@@ -10,7 +10,7 @@ export class TokenStorageService {
   public getToken(): string {
     let token = JSON.parse(localStorage.getItem('session'));
     if(token){
-      return token['access_token'];
+      return token['token'];
     }else{
       return ''
     }

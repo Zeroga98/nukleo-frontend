@@ -11,6 +11,7 @@ import { ExpenseUnitService } from './services/api/expense-unit.service';
 import { StorageService } from './services/api/storage.service';
 import { OrderService } from './services/api/orders.service';
 import { TokenStorageService } from 'app/shared/services/auth/token-storage.service';
+import { ModelService } from 'app/shared/services/api/model.service'
 
 @NgModule({
 	imports: [
@@ -24,7 +25,8 @@ import { TokenStorageService } from 'app/shared/services/auth/token-storage.serv
 		ExpenseUnitService,
 		StorageService,
 		OrderService,
-		TokenStorageService
+		TokenStorageService,
+		ModelService
 	]
 })
 export class SharedModule { }

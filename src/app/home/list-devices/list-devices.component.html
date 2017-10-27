@@ -1,51 +1,121 @@
 
-<section class="card">
-  <div class="card-header">
-      <span class="cat__core__title">
-          <strong>Casa</strong>
-      </span>
-  </div>
-  <div class="card-block">
+<div class="row">
+    <div class="col-lg-6">
+        <div class="cat__core__sortable" id="left-col">
+            <section class="card" order-id="card-1">
+                <div class="card-header">
+                    <div class="pull-right cat__core__sortable__control">
 
-      <div class="row">
-          <div class="col-lg-12">
-              <div class="mb-5">
-                  
-                  
-                  <div class="row">
-                      <div class="col-lg-3">
-                          <!-- Example State Done -->
-                          <div style="cursor: pointer" routerLink="/"  class="item-device">
-                              <span class="cat__core__step__digit">
-                                  <i class="icmn-home"><!-- --></i>
-                              </span>
-                              <div class="cat__core__step__desc">
-                                  <span class="item-device__title">Casasdfadsa</span>
-                                  <p>3 dispositivos</p>
-                              </div>
-                          </div>
-                          <!-- End Example State Done -->
-                      </div>
-                      <div class="col-lg-3">
-                          <!-- Example State Error -->
-                          <div style="cursor: pointer" routerLink="devices-list"  class="item-device">
-                              <span class="cat__core__step__digit">
-                                  <i class="fa fa-tasks"><!-- --></i>
-                              </span>
-                              <div class="cat__core__step__desc">
-                                  <span class="item-device__title">asdfdsafsadf</span>
-                                  <p>1 disitivo</p>
-                              </div>
-                          </div>
-                          <!-- End Example State Error -->
-                      </div>
-                    
-                    
-                  </div>
-              </div>
-          </div>
+                    </div>
+                    <h5 class="mb-0 text-black">
+                        <strong>Informacion Modelo</strong>
+                        <small class="text-muted">Ultima version firmware 1.0</small>
+                    </h5>
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-xl-7">
+                            <div class="cat__core__widget cat__core__widget__2">
+                                <div class="cat__core__widget__2__head" style="background-image: url('assets/modules/pages/common/img/iot.png');">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5">
+                            <strong>Motor IoT</strong>
+                            <p class="text-muted">Descripcion</p>
+                            <strong>Modelo Fecha:</strong>
+                            <p class="text-muted">2015</p>
+                            <strong>Accionnes:</strong>
+                            <p class="text-muted">2 acciones registradas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="card" order-id="card-13">
+                    <div class="card-block">
+                        <table class="table table-hover nowrap" id="example1" width="100%">
+                            <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>id Dispositivo</th>
+                                <th>Ubicacion</th>
+                                <th>Version FW</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Bombillo</td>
+                                <td>123341</td>
+                                <td>Florencia Caqueta</td>
+                                <td>12.5</td>
+                            </tr>
+                            <tr>
+                                <td>Bombillo</td>
+                                <td>123341</td>
+                                <td>Florencia Caqueta</td>
+                                <td>12.5</td>
+                            </tr>
+                            <tr>
+                                <td>Bombillo</td>
+                                <td>123341</td>
+                                <td>Florencia Caqueta</td>
+                                <td>12.5</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>   
         </div>
-      
-  </div>
+    </div>
+    <div class="col-lg-6">
+        <section class="card" order-id="card-2">
+                    <div class="card-header">
+                        <div class="pull-right cat__core__sortable__control">
+                            <i class="icmn-minus mr-2 cat__core__sortable__collapse" data-toggle="tooltip" data-placement="left" title="" data-original-title="Collapse"></i>
+                            <i class="icmn-plus mr-2 cat__core__sortable__uncollapse" data-toggle="tooltip" data-placement="left" title="" data-original-title="Uncollapse"></i>
+                            <i class="icmn-cross cat__core__sortable__close" data-toggle="tooltip" data-placement="left" title="" data-original-title="Remove"></i>
+                        </div>
+                        <h5 class="mb-0 text-black">
+                            <strong>Acciones</strong>
+                        </h5>
+                    </div>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="cat__core__widget cat__core__widget--border cat__core__widget__1 px-3 py-5">
+                                    <div class="cat__core__widget__1__plus">
+                                        <i class="fa fa-pencil" style="position: absolute;top: 2px;left: 4px;"></i>
+                                    </div>
+                                    <a class="cat__core__avatar cat__core__avatar--90 cat__core__avatar--border d-block mx-auto" href="javascript:void(0);">
+                                        <img src="assets/modules/pages/common/img/IoT-logo.png" alt="Alternative text to the image">
+                                    </a>
+                                    <div class="my-3 text-center">
+                                        <strong class="font-size-18">Encender</strong>
+                                        <br />
+                                        <span class="text-muted">Parametro: On</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="cat__core__widget cat__core__widget--border cat__core__widget__1 px-3 py-5">
+                                    <div class="cat__core__widget__1__plus">
+                                            <i class="fa fa-pencil" style="position: absolute;top: 2px;left: 4px;"></i>
+                                    </div>
+                                    <a class="cat__core__avatar cat__core__avatar--90 cat__core__avatar--border d-block mx-auto" href="javascript:void(0);">
+                                        <img src="assets/modules/pages/common/img/IoT-logo.png" alt="Alternative text to the image">
+                                    </a>
+                                    <div class="my-3 text-center">
+                                        <strong class="font-size-18">Apagado</strong>
+                                        <br />
+                                        <span class="text-muted">Parametro: Off</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cat__core__margin-fix"><!-- --></div>
+                    </div>
+                </section>
 
-</section>
+    </div>
+</div>
+

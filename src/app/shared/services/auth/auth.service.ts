@@ -21,7 +21,7 @@ export class AuthService {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8'),
     }).subscribe(
       (data => {
-       console.log(data);
+       console.log(data["token"]);
        localStorage.setItem('session', JSON.stringify(data));
        this.router.navigate(['']);
       }),

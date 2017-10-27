@@ -8,7 +8,7 @@ import { ListDevicesComponent } from 'app/home/list-devices/list-devices.compone
 
 const homeRoutes: Routes =[
   { path: '', component: HomeComponent,canActivate: [AuthGuardEager],children: [
-    { path: 'devices-list', component: ListDevicesComponent }
+    { path: 'devices-list/:model_id', component: ListDevicesComponent }
   ] }
 ]
 
